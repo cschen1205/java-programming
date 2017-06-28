@@ -8,7 +8,7 @@ import java.util.Stack;
  * (A) Only one disk can be moved at a time
  * (B) A disk is slid off the top of one rod onto the next rod
  * (C) A disk can only be placed on top of a larger disk
- * 
+ *
  * Write a program to move the disks from the first rod to the last using Stacks
  */
 public class Q04 {
