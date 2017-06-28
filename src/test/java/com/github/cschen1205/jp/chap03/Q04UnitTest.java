@@ -1,8 +1,6 @@
-package com.github.cschen1205.jp.chap3;
+package com.github.cschen1205.jp.chap03;
 
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by memeanalytics on 28/6/17.

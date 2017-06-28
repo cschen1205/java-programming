@@ -1,4 +1,4 @@
-package com.github.cschen1205.jp.chap3;
+package com.github.cschen1205.jp.chap03;
 
 import java.util.Stack;
 
