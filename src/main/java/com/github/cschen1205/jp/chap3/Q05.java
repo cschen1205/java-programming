@@ -23,6 +23,6 @@ public class Q05 {
             return s2.pop();
         }
 
-        
+
     }
 }
