@@ -12,7 +12,7 @@ public class Q01 {
 
         int left = max - (1 << j - 1);
         int right = (1 << i - 1);
-        
+
         return (n & (left | right)) | (m << i);
     }
 }
