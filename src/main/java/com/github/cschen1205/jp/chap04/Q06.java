@@ -12,7 +12,7 @@ public class Q06 {
         public TreeNode right;
     }
 
-    public TreeNode commonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public static TreeNode commonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(covers(root.left, p) && covers(root.left, q)){
             return commonAncestor(root.left, p, q);
         }
@@ -22,7 +22,7 @@ public class Q06 {
         return root;
     }
 
-    public boolean covers(TreeNode root, TreeNode p){
+    public static boolean covers(TreeNode root, TreeNode p){
         if(root==null) return false;
         if(root == p) return true;
         return covers(root.left, p) || covers(root.right, p);
