@@ -33,5 +33,14 @@ public class Q03UnitTest {
         }
     }
 
+    @Test
+    public void test_method3(){
+        List<Integer> set = Arrays.asList(1, 2, 3, 4);
+        List<List<Integer>> subsets = Q03.getAllSubsets3(set);
+        for(int i=0; i < subsets.size(); ++i) {
+            logger.info("set #{}: {}", i, subsets.get(i));
+        }
+    }
+
 
 }
