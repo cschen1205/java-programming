@@ -11,6 +11,9 @@ public class Q03 {
     public static List<List<Integer>> getAllSubsets(List<Integer> set, int index) {
         if (index < 0){
             List<List<Integer>> allSubsets = new ArrayList<>();
+            return allSubsets;
+        } else if(index == set.size()) {
+            List<List<Integer>> allSubsets = getAllSubsets(set, index-1);
             allSubsets.add(new ArrayList<>());
             return allSubsets;
         } else {
@@ -28,6 +31,54 @@ public class Q03 {
             return allSubsets;
         }
 
+    }
+
+    public static List<List<Integer>> getAllSubsets2(List<Integer> set) {
+        int index = 1;
+        List<List<Integer>> allSubsets = new ArrayList<>();
+        List<List<Integer>> front = new ArrayList<>();
+        for(Integer item : set) {
+            front.add(Arrays.asList(item));
+        }
+        allSubsets.addAll(front);
+
+        while(++index < set.size()){
+
+            List<List<Integer>> newFront = new ArrayList<>();
+
+            for(int i=0; i < front.size()-1; ++i) {
+                for(int j=i+1; j < front.size(); ++j){
+                    boolean can_join = true;
+                    for(int k=0; k < index-2; ++k) {
+                        if(front.get(i).get(k)  != front.get(j).get(k)) {
+                            can_join = false;
+                        }
+                    }
+                    if(can_join){
+                        int tail_i = front.get(i).get(index-2);
+                        int tail_j = front.get(j).get(index-2);
+                        List<Integer> newSet = new ArrayList<>();
+                        if(tail_i > tail_j) {
+                            newSet.addAll(front.get(j));
+                            newSet.add(tail_i);
+                        } else {
+                            newSet.addAll(front.get(i));
+                            newSet.add(tail_j);
+                        }
+                        newFront.add(newSet);
+                    }
+                }
+            }
+
+            allSubsets.addAll(newFront);
+
+            front = newFront;
+        }
+
+        allSubsets.add(set);
+        allSubsets.add(new ArrayList<>());
+        
+        return allSubsets;
     }
 
 }

@@ -17,11 +17,21 @@ public class Q03UnitTest {
     private static final Logger logger = LoggerFactory.getLogger(Q03UnitTest.class);
     @Test
     public void test_method1(){
-        List<Integer> set = Arrays.asList(1, 2, 3);
-        List<List<Integer>> subsets = Q03.getAllSubsets(set, 2);
+        List<Integer> set = Arrays.asList(1, 2, 3, 4);
+        List<List<Integer>> subsets = Q03.getAllSubsets(set, set.size());
         for(int i=0; i < subsets.size(); ++i) {
             logger.info("set #{}: {}", i, subsets.get(i));
         }
     }
+
+    @Test
+    public void test_method2(){
+        List<Integer> set = Arrays.asList(1, 2, 3, 4);
+        List<List<Integer>> subsets = Q03.getAllSubsets2(set);
+        for(int i=0; i < subsets.size(); ++i) {
+            logger.info("set #{}: {}", i, subsets.get(i));
+        }
+    }
+
 
 }
