@@ -6,15 +6,15 @@ import java.util.stream.Collectors;
 
 /**
  * Created by memeanalytics on 4/7/17.
+ * Write an algorithm to print all ways of arranging eight queens on a chess board so that none of them share the same row, column or diagonal
  */
 public class Q07 {
     public static boolean check(int n, List<Integer> row) {
-        for(int colIndex = 0; colIndex < row.size()-1; ++colIndex) {
-            for(int j = colIndex+1; j < row.size(); ++j) {
+        int colIndex = row.size()-1;
+            for(int j = 0; j < row.size()-1; ++j) {
                 int diff = Math.abs(row.get(colIndex) - row.get(j));
-                if(diff == 0 || diff == j - colIndex) return false;
+                if(diff == 0 || diff == colIndex - j) return false;
             }
-        }
         return true;
     }
     public static void nQueens(int n, List<Integer> row) {
