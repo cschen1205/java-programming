@@ -11,7 +11,7 @@ public class Q05 {
                 hi--;
             }
             if(lo > hi) break;
-            
+
             int mid = (lo + hi) / 2;
 
             boolean found = true;
